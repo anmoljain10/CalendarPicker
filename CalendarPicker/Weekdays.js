@@ -36,7 +36,14 @@ export default function Weekdays(props) {
         }
 
           return (
-            <Text key={key} style={[styles.dayLabels, updatedStyle]}>
+            <Text key={key} style={[styles.dayLabels, {
+              fontFamily: 'Proxima Nova',
+              fontStyle: 'normal',
+              fontWeight: 'normal',
+              fontSize: 12,
+              lineHeight: 15,
+              color: '#999999',
+            }]}>
               {day}
             </Text>
           );

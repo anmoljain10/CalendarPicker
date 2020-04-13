@@ -36,8 +36,11 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
     },
 
     dayLabel: {
-      fontSize: 14*scaler,
-      color: '#000',
+      fontFamily: 'Proxima Nova',
+      fontStyle: 'normal',
+      fontWeight: 'bold',
+      fontSize: 12,
+      lineHeight: 15,
       alignSelf: 'center'
     },
 
@@ -131,7 +134,8 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
       color: '#000',
       marginBottom: 10*scaler,
       width: 180*scaler,
-      textAlign: 'center'
+      textAlign: 'center',
+      fontWeight:'bold'
     },
 
     headerWrapper: {
