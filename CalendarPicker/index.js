@@ -55,6 +55,9 @@ export default class CalendarPicker extends Component {
 
   componentDidMount() {
     this.updateDayOfWeekStyles(moment());
+    // this.setState({
+    //   ...this.updateMonthYear(this.props.initialDate)
+    // })
   }
 
   updateDayOfWeekStyles = currentDate => {
@@ -81,9 +84,9 @@ export default class CalendarPicker extends Component {
     } while (day.add(1, 'day').isSame(currentDate, 'month'));
     this.setState({defaultCustomDatesStyles: customDatesStyles});
   };
-  componentWillReceiveProps(props) {
-     this.updateMonthYear(props.initialDate)
-  }
+  // componentWillReceiveProps(props) {
+  //    this.updateMonthYear(props.initialDate)
+  // }
   componentDidUpdate(prevProps, prevState) {
     let newStyles = {};
     let doStateUpdate = false;
@@ -98,10 +101,9 @@ export default class CalendarPicker extends Component {
     }
 
     let newMonthYear = {};
-    // if (!moment(prevProps.initialDate).isSame(this.props.initialDate, "day")) {
-    //   newMonthYear = this.updateMonthYear(this.props.initialDate);
-    //   doStateUpdate = true;
-    // }
+    if (!moment(prevProps.initialDate).isSame(this.props.initialDate, "day")) {
+      newMonthYear = this.updateMonthYear(this.props.initialDate);
+    }
     
     let selectedDateRanges = {};
     if (
